@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static string alphabet = "abcdefghijklmnopqrstuvwxyz.1234567890";
+
+    public static void Main()
+    {
+        var firstWord = FirstWord();
+        var secondWord = SecondWord(19, 14, 15);
+
+        Console.WriteLine(secondWord + " " + firstWord);
+        Console.ReadKey();
+    }
+
+    public static string FirstWord()
+    {
+        var firstWord = "";
+
+        for (int i = 0; i < alphabet.Length; i++)
+        {
+            if (i == 6 || i == 8)
+                firstWord += alphabet[i];
+            else
+                continue;
+        }
+
+        for (int i = 0; i < alphabet.Length; i++)
+        {
+            if (i == 19 || i == 5)
+                firstWord += alphabet[i];
+            else
+                continue;
+        }
+
+        return firstWord;
+    }
+
+    public static string SecondWord(int firstLetter, int secondLetter, int thirdLetter)
+    {
+        var fLetter = alphabet[firstLetter];
+        var sLetter = alphabet[secondLetter];
+        var tLetter = alphabet[thirdLetter];
+        return fLetter.ToString() + sLetter.ToString() + tLetter.ToString();
+    }
+}
